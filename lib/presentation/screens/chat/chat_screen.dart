@@ -30,7 +30,7 @@ class _chatview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    // lo que hace es pedirle al widget que este pendiente de todos los cambios
    final chatprovider = context.watch<ChatProvider>(); 
 
     return SafeArea(
@@ -42,10 +42,13 @@ class _chatview extends StatelessWidget {
               controller: chatprovider.chatScrollcontroler,
               itemCount: chatprovider.message.length,
               itemBuilder: (context, index) {
+                //Es la instancia del mensaje que saldra de quien es el mensaje 
                 final message = chatprovider.message[index];
               
                 return (message.fromWho == FromWho.AMLOs)
+                  // da el mensaje de amlo 
                   ? AMLOMessage(message: message)
+                  // este da mi mensaje
                   : MyMessage(message: message,); 
             },)),
         
@@ -56,5 +59,5 @@ class _chatview extends StatelessWidget {
         ),
       ),
     );
-  }
+  }  
 }

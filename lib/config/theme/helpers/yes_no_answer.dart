@@ -7,7 +7,7 @@ class GetYesNoanswer {
 
   final _dio = Dio();
   Future<Messages> getAnswer() async { 
-
+    //almacen la peticion get en una variable
     final response = await _dio.get('https://yesno.wtf/api');
 
     final yesnomodel = YesNoModel.fromJsonMap(response.data);

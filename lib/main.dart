@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
+        // es un bulid context y lo que hace es que da los cambios del chat provider
         ChangeNotifierProvider(create: (_) => ChatProvider())
       ],
       child: MaterialApp(

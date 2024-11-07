@@ -13,25 +13,33 @@ class ChatProvider extends ChangeNotifier{
     Messages(text: 'Buenos dia', fromWho: FromWho.mine),
     Messages(text: 'hola', fromWho: FromWho.mine)
   ];
-
+  // el future es una promesa
   Future<void> sendMessage(String text) async{ 
     
     final newMessage = Messages(text: text, fromWho: FromWho.mine);
-    message.add(newMessage);
-
+    if (text.isNotEmpty){
+      message.add(newMessage);
+    }
+   // message.add(newMessage);
     if (text.endsWith('?')){ 
        amloReply();
      }
+     // notifica al provider para saber si algo cambio
     notifyListeners();
+    // mueve el escroll debajo del texto 
     moveScrollToBottom();
 
    }
 
 
   Future<void> amloReply() async { 
+    //obtener el mensaje de la peticion 
     final AMLOMessage = await getYesNoanswer.getAnswer();
+    //añade el mensaje a la lista
     message.add(AMLOMessage);
+    // notifica si algo cambio para el estado
     notifyListeners();
+    // mueve el scroll hasta abajo 
     moveScrollToBottom();
 
    }
@@ -43,6 +51,8 @@ class ChatProvider extends ChangeNotifier{
     chatScrollcontroler.position.maxScrollExtent,
     duration: const Duration(seconds: 1), 
     curve: Curves.easeOut);
+    print("Numero de mensajes:");
+    print(message.length);
 
   }
 

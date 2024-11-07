@@ -19,7 +19,7 @@ class MyMessage extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(message.text, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+            child: Text(message.text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
           ),
         ),
 
