@@ -14,7 +14,7 @@ class YesNoModel {
         required this.forced,
         required this.image,
     });
-
+    // factory no necesariamente crea una nueva instancia 
     factory YesNoModel.fromJsonMap(Map<String, dynamic> json) => YesNoModel(
         answer: json["answer"],
         forced: json["forced"],
@@ -28,7 +28,10 @@ class YesNoModel {
     };
 
     Messages toMessageEntitie() => Messages(
-      text: answer == 'yes'? 'Si' : 'No', 
+      text: answer == 'yes'? 'Si'
+       : answer == 'no'
+        ?'No'
+        :'Quiza',
       fromWho: FromWho.AMLOs,
       imageUrl: image);
 }

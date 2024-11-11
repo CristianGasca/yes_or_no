@@ -51,7 +51,7 @@ class _chatview extends StatelessWidget {
                   // este da mi mensaje
                   : MyMessage(message: message,); 
             },)),
-        
+              // muestra los mensajes
              MessageBox(
               onValue: (value) => chatprovider.sendMessage(value),
              )
