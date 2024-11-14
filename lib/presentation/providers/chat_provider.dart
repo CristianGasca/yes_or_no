@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:yes_or_no/config/theme/helpers/yes_no_answer.dart';
 import 'package:yes_or_no/domain/entities/messages.dart';
@@ -45,16 +44,16 @@ class ChatProvider extends ChangeNotifier{
    }
 
   void moveScrollToBottom(){ 
-
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+    print("Max scroll extent: ${chatScrollcontroler.position.maxScrollExtent}");
     chatScrollcontroler.animateTo(
-      //extender el scroll lo maximo que se mueva
-    chatScrollcontroler.position.maxScrollExtent,
-    duration: const Duration(seconds: 1), 
-    curve: Curves.easeOut);
+      chatScrollcontroler.position.maxScrollExtent,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeOut,
+    );
+  });
     print("Numero de mensajes:");
     print(message.length);
 
   }
-
-
 }

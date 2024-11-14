@@ -23,13 +23,13 @@ class MessageBox extends StatelessWidget {
         enabledBorder: outlineInputBorder,
         focusedBorder: outlineInputBorder,
         filled: true,
-        suffix: IconButton(
-          icon: const Icon( Icons.send_outlined),
+        suffix: FloatingActionButton(
+          child: const Icon( Icons.send_outlined, color: Colors.black,),
           onPressed: (){ 
             final Textvalue = textController.value.text;
             onValue(Textvalue);
 
-          },
+          }, 
         )
       );
       return TextFormField(

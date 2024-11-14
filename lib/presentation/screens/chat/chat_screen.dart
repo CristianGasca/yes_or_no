@@ -13,7 +13,26 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AMLO BB💗'),
+        title: const Stack(
+          children: [
+           Text('AMLO BB💗'), Padding(
+             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 1),
+             child: Text( textAlign: TextAlign.left, 'Online', style: TextStyle(fontSize: 15),),
+           )
+          ],
+        ),
+        actions: <Widget>[  ButtonTheme(
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 1),
+          child: Icon(Icons.videocam),
+        ),
+        ), ButtonTheme(child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Icon(Icons.phone),
+        )), ButtonTheme(child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Icon(Icons.settings),
+        ),)],
         leading: const Padding(
           padding: EdgeInsets.all(1.0),
           child: CircleAvatar(

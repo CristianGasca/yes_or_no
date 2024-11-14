@@ -20,6 +20,8 @@ version: 1.0.0+1
 
 environment:
   sdk: ^3.5.3
+    
+
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -37,10 +39,12 @@ dependencies:
   cupertino_icons: ^1.0.8
   provider: ^6.1.2
   dio: ^5.7.0
-
+  flutter_cors: ^1.5.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  intl: ^0.18.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
